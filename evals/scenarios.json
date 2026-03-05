@@ -1,0 +1,26 @@
+[
+  {
+    "id": "S-001",
+    "message": "I received a suspicious email asking for credentials after clicking invoice link.",
+    "expected_incident_type": "phishing",
+    "acceptable_severity": ["high", "critical"]
+  },
+  {
+    "id": "S-002",
+    "message": "I saw impossible travel login alerts and MFA push I did not approve.",
+    "expected_incident_type": "account_compromise",
+    "acceptable_severity": ["critical"]
+  },
+  {
+    "id": "S-003",
+    "message": "Endpoint triggered malware alert and suspicious process tree.",
+    "expected_incident_type": "malware",
+    "acceptable_severity": ["high", "critical"]
+  },
+  {
+    "id": "S-004",
+    "message": "Can someone help me with a security concern on my account?",
+    "expected_incident_type": "other_security",
+    "acceptable_severity": ["medium", "high"]
+  }
+]

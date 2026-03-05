@@ -1,0 +1,67 @@
+:root {
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --text: #16212f;
+  --accent: #005f73;
+  --border: #d1d9e6;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at 0% 0%, #d9edf6, var(--bg));
+  color: var(--text);
+}
+
+.layout {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 5px 24px rgba(0, 0, 0, 0.08);
+}
+
+label {
+  display: block;
+  margin-top: 0.75rem;
+  font-weight: 600;
+}
+
+input,
+textarea,
+button {
+  width: 100%;
+  margin-top: 0.4rem;
+  padding: 0.65rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+button {
+  margin-top: 1rem;
+  border: none;
+  color: #fff;
+  background: var(--accent);
+  cursor: pointer;
+}
+
+pre {
+  background: #f8fbff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem;
+  overflow: auto;
+}

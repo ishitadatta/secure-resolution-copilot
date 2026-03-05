@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secure Resolution Copilot</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="card">
+        <h1>Secure Resolution Copilot</h1>
+        <p>Simulated Moveworks intake + ServiceNow-style ticketing for cyber incident resolution quality.</p>
+
+        <label for="userId">User ID</label>
+        <input id="userId" value="employee-001" />
+
+        <label for="message">Security Incident Message</label>
+        <textarea id="message" rows="6">I got a suspicious invoice email and clicked a link asking for my credentials.</textarea>
+
+        <button id="submitBtn">Run Intake</button>
+      </section>
+
+      <section class="card">
+        <h2>Result</h2>
+        <pre id="result">No request yet.</pre>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
