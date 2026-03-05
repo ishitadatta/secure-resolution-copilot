@@ -5,6 +5,13 @@ Security teams need a clear, repeatable way to test cyber incident workflows end
 
 This project provides a fullstack simulation environment for that workflow, with a guided Scenario Lab UI, categorized alarms, and API-level testability.
 
+## UI Screenshots
+### Scenario Lab + Mission Report + Alarm Center
+![Scenario Lab + Mission Report + Alarm Center](docs/screenshots/scenario-lab-overview.png)
+
+### Connected API state
+![Connected API state](docs/screenshots/connected-api-state.png)
+
 ## What the app does
 - Guided scenario runs through full mission lifecycle.
 - Manual intake playground for custom incident messages.
