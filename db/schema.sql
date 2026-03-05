@@ -26,3 +26,13 @@ CREATE TABLE IF NOT EXISTS action_logs (
   result TEXT NOT NULL DEFAULT 'PENDING',
   created_at TIMESTAMP NOT NULL DEFAULT NOW()
 );
+
+CREATE TABLE IF NOT EXISTS resolution_proofs (
+  id SERIAL PRIMARY KEY,
+  ticket_id INTEGER NOT NULL UNIQUE REFERENCES tickets(id),
+  evidence_completeness FLOAT NOT NULL,
+  counterfactual_impact_score FLOAT NOT NULL,
+  action_trace_hash VARCHAR(128) NOT NULL,
+  proof_hash VARCHAR(128) NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT NOW()
+);

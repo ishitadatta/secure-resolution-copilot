@@ -4,29 +4,80 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Secure Resolution Copilot</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=2" />
   </head>
   <body>
+    <header class="hero">
+      <h1>Secure Resolution Copilot</h1>
+      <p>AI-driven cyber incident handling simulator with guided scenarios and clear mission outcomes.</p>
+      <div class="status-row">
+        <span id="apiStatus" class="badge">Checking API...</span>
+      </div>
+      <div class="quickstart">
+        <span>1. Start API</span>
+        <span>2. Click Connect API</span>
+        <span>3. Select Scenario</span>
+        <span>4. Run Mission</span>
+      </div>
+      <div class="connect-row">
+        <input id="apiUrl" placeholder="http://127.0.0.1:8000/v1" />
+        <button id="connectApiBtn" class="connect-btn secondary">Connect API</button>
+      </div>
+    </header>
+
     <main class="layout">
       <section class="card">
-        <h1>Secure Resolution Copilot</h1>
-        <p>Simulated Moveworks intake + ServiceNow-style ticketing for cyber incident resolution quality.</p>
+        <h2>Scenario Lab</h2>
+        <p>Pick a scenario and run the entire workflow: intake, approval, execution, assurance proof, and attack challenge.</p>
 
-        <label for="userId">User ID</label>
-        <input id="userId" value="employee-001" />
+        <label for="scenarioSelect">Scenario</label>
+        <select id="scenarioSelect"></select>
+        <div id="scenarioHint" class="hint warning">Not connected yet. Click <strong>Connect API</strong>.</div>
 
-        <label for="message">Security Incident Message</label>
-        <textarea id="message" rows="6">I got a suspicious invoice email and clicked a link asking for my credentials.</textarea>
+        <button id="runScenarioBtn" class="primary">Run End-to-End Mission</button>
 
-        <button id="submitBtn">Run Intake</button>
+        <div id="scenarioCards" class="scenario-grid"></div>
       </section>
 
       <section class="card">
-        <h2>Result</h2>
+        <h2>Mission Report</h2>
+        <label class="inline-toggle" for="verboseToggle">
+          <input type="checkbox" id="verboseToggle" />
+          Verbose mode (show full JSON)
+        </label>
+        <div id="missionSteps" class="steps">
+          <div class="step">1. Select a scenario and run a mission.</div>
+          <div class="step">2. Review confidence, actions executed, and assurance checks.</div>
+          <div class="step">3. Check Alarm Center for categorized alerts.</div>
+        </div>
+        <pre id="missionResult">No mission has run yet.</pre>
+      </section>
+
+      <section class="card">
+        <h2>Alarm Center</h2>
+        <p class="small">Categorized, UI-friendly alarms generated from mission results and manual intake.</p>
+        <div id="alarmSummary" class="alarm-summary">No alarms yet.</div>
+        <div id="alarmList" class="alarm-list"></div>
+      </section>
+
+      <section class="card full-width">
+        <h2>Manual Intake Playground</h2>
+        <p>Use this when you want to test your own message instead of a prebuilt scenario.</p>
+        <div class="inline-grid">
+          <div>
+            <label for="userId">User ID</label>
+            <input id="userId" value="employee-001" />
+          </div>
+          <div>
+            <label for="message">Security Incident Message</label>
+            <textarea id="message" rows="4">I got a suspicious invoice email and clicked a link asking for my credentials.</textarea>
+          </div>
+        </div>
+        <button id="submitBtn" class="secondary">Run Intake Only</button>
         <pre id="result">No request yet.</pre>
       </section>
     </main>
 
-    <script src="./script.js"></script>
+    <script src="./script.js?v=4"></script>
   </body>
 </html>

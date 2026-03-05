@@ -47,3 +47,51 @@ class QualityMetrics(BaseModel):
     analyst_override_rate: float
     recurrence_rate_7d: float
     high_risk_containment_rate: float
+
+
+class ResolutionProofResponse(BaseModel):
+    ticket_id: int
+    evidence_completeness: float
+    counterfactual_impact_score: float
+    action_trace_hash: str
+    proof_hash: str
+
+
+class CounterfactualRequest(BaseModel):
+    dropped_actions: list[str] = []
+
+
+class CounterfactualResponse(BaseModel):
+    ticket_id: int
+    dropped_actions: list[str]
+    residual_risk_score: float
+    blast_radius_score: float
+    recommended_minimum_actions: list[str]
+
+
+class SafetyChallengeRequest(BaseModel):
+    message: str = Field(min_length=4)
+
+
+class SafetyChallengeResponse(BaseModel):
+    blocked: bool
+    risk_signals: list[str]
+    secure_response_template: str
+
+
+class DemoScenario(BaseModel):
+    id: str
+    title: str
+    description: str
+    message: str
+    expected_incident_type: str
+
+
+class DemoRunResponse(BaseModel):
+    scenario_id: str
+    ticket_id: int
+    incident_type: str
+    severity: str
+    confidence: float
+    status: str
+    mission_report: dict[str, object]
